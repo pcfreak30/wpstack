@@ -1,0 +1,24 @@
+wordpress:
+  build: .
+  environment:
+    WORDPRESS_DB_PASSWORD: password
+    MYSQL_PORT_3306_TCP: 1
+  links:
+    - db:mysql
+  ports:
+    - 8080:80
+    - 9000:9000
+  volumes:
+    - web/:/var/www/html
+db:
+  image: mariadb
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+  expose:
+    - 3306
+phpmyadmin:
+  image: nazarpc/phpmyadmin
+  links:
+    - db:mysql
+  expose:
+    - 8081:80

@@ -1,0 +1,14 @@
+wordpress:
+  build: pcfreak30/wpstack
+  image:
+  extends:
+      file: docker-compose.yml
+      service: wordpress
+db:
+  extends:
+        file: docker-compose.yml
+        service: db
+phpmyadmin:
+  extends:
+        file: docker-compose.yml
+        service: phpmyadmin
