@@ -20,5 +20,5 @@ phpmyadmin:
   image: nazarpc/phpmyadmin
   links:
     - db:mysql
-  expose:
+  ports:
     - 8081:80
