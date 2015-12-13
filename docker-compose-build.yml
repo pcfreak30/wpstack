@@ -11,7 +11,7 @@ wordpress:
   volumes:
     - web/:/var/www/html
 db:
-  image: mariadb
+  image: mariadb:10.0
   environment:
     MYSQL_ROOT_PASSWORD: password
   expose:
