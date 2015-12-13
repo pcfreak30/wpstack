@@ -2,7 +2,7 @@
 wordpress:
   image: pcfreak30/wpstack
   environment:
-    WORDPRESS_DB_PASSWORD: password
+    WORDPRESS_DB_PASSWORD: wpstack
     MYSQL_PORT_3306_TCP: 1
   links:
     - db:mysql
@@ -14,7 +14,7 @@ wordpress:
 db:
   image: mariadb:10.0
   environment:
-    MYSQL_ROOT_PASSWORD: password
+    MYSQL_ROOT_PASSWORD: wpstack
   expose:
     - 3306
 phpmyadmin:
