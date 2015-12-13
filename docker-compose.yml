@@ -1,14 +1,25 @@
+
 wordpress:
-  build: pcfreak30/wpstack
-  image:
-  extends:
-      file: docker-compose.yml
-      service: wordpress
+  image: pcfreak30/wpstack
+  environment:
+    WORDPRESS_DB_PASSWORD: password
+    MYSQL_PORT_3306_TCP: 1
+  links:
+    - db:mysql
+  ports:
+    - 8080:80
+    - 9000:9000
+  volumes:
+    - web/:/var/www/html
 db:
-  extends:
-        file: docker-compose.yml
-        service: db
+  image: mariadb:10.0
+  environment:
+    MYSQL_ROOT_PASSWORD: password
+  expose:
+    - 3306
 phpmyadmin:
-  extends:
-        file: docker-compose.yml
-        service: phpmyadmin
+  image: nazarpc/phpmyadmin
+  links:
+    - db:mysql
+  ports:
+    - 8081:80
