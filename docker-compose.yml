@@ -1,6 +1,6 @@
 
 wordpress:
-  image: pcfreak30/wpstack
+  image: pcfreak30/wpstack:php7
   environment:
     WORDPRESS_DB_PASSWORD: wpstack
     MYSQL_PORT_3306_TCP: 1
