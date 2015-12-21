@@ -2,7 +2,7 @@ FROM wordpress
 
 RUN apt-get update && apt-get install -y git wget subversion cvs bzr
 
-RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -O /usr/local/bin/wp
+RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -O /usr/local/bin/wp && chmod +x /usr/local/bin/wp
 
 RUN pecl install xdebug
 
