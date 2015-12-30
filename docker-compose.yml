@@ -10,7 +10,7 @@ wordpress:
     - 8080:80
     - 9000:9000
   volumes:
-    - web/:/var/www/html
+    - ./web/:/var/www/html
 db:
   image: mariadb:10.0
   environment:
