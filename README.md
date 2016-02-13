@@ -25,3 +25,7 @@
 ### How to Build From Image ###
 
 `docker-compose`
+
+### Setting Your User and Group ID ###
+
+Due to how docker treats mounted volumes, the user and group ID of `www-data` must be changed at runtime to prevent a permissions hell. This is achieved by the `HOST_UID` and `HOST_GID`enviromental variables. Change these in `docker-compose.yml` or `docker-compose-build.yml` depending on what you want to do (build or download pre-made image from docker hub).
