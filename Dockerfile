@@ -19,3 +19,7 @@ RUN echo "zend_extension = /usr/local/lib/php/extensions/$(ls /usr/local/lib/php
 COPY php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 COPY php/mailcatcher.ini /usr/local/etc/php/conf.d/mailcatcher.ini
+
+COPY bootstrap.sh /bootstrap.sh
+
+CMD ["/bootstrap.sh","apache2-foreground"]

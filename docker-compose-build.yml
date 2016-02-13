@@ -3,6 +3,8 @@ wordpress:
   environment:
     WORDPRESS_DB_PASSWORD: wpstack
     MYSQL_PORT_3306_TCP: 1
+    HOST_UID: 1000
+    HOST_GID: 1000
   links:
     - db:mysql
   ports:
