@@ -1,7 +1,7 @@
 ### What WPStack includes ###
 
 * Latest wordpress on mod_php
-* PHP 5.6 with xdebug and opcache
+* PHP 7 with xdebug and opcache
 * MariaDB
 * phpMyAdmin
 * Git
