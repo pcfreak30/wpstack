@@ -22,4 +22,7 @@ COPY php/mailcatcher.ini /usr/local/etc/php/conf.d/mailcatcher.ini
 
 COPY bootstrap.sh /bootstrap.sh
 
-CMD ["/bootstrap.sh","apache2-foreground"]
+RUN sed -i 's/exec.*//' /entrypoint.sh
+
+ENTRYPOINT ["/bootstrap.sh"]
+CMD ["apache2-foreground"]
