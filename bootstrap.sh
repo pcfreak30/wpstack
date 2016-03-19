@@ -2,10 +2,8 @@
 
 set -e
 
-# Hack, entrypoint.sh calls apache, so we silently kill it and spawn out own in $@
-/entrypoint.sh apache2
-
-killall -9 apache2 &> /dev/null
+# Call entrypoint.sh
+/entrypoint.sh "$@"
 
 # If HOST_UID is passed, change the permissions
 if [ ! -z "$HOST_UID" ]; then
