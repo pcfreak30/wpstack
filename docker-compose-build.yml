@@ -9,7 +9,6 @@ wordpress:
     - db:mysql
   ports:
     - 8080:80
-    - 9000:9000
   volumes:
     - ./web/:/var/www/html
 db:
