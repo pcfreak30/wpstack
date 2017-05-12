@@ -1,4 +1,4 @@
-FROM wordpress-php5.5
+FROM wordpress:php5.6
 
 RUN apt-get update && apt-get install -y git wget subversion cvs bzr
 
@@ -22,9 +22,9 @@ COPY php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
 
 COPY php/mailcatcher.ini /usr/local/etc/php/conf.d/mailcatcher.ini
 
-COPY bootstrap.sh /bootstrap.sh
+COPY bootstrap.sh /usr/local/bin/bootstrap.sh
 
-RUN sed -i 's/exec.*//' /entrypoint.sh
+RUN sed -i 's/exec.*//' /usr/local/bin/docker-entrypoint.sh
 
-ENTRYPOINT ["/bootstrap.sh"]
+ENTRYPOINT ["bootstrap.sh"]
 CMD ["apache2-foreground"]
