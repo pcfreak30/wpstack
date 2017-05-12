@@ -24,6 +24,10 @@ COPY php/mailcatcher.ini /usr/local/etc/php/conf.d/mailcatcher.ini
 
 COPY bootstrap.sh /usr/local/bin/bootstrap.sh
 
+COPY droproot.sh /usr/local/bin/droproot.sh
+
+RUN usermod -s /bin/bash www-data
+
 RUN sed -i 's/exec.*//' /usr/local/bin/docker-entrypoint.sh
 
 ENTRYPOINT ["bootstrap.sh"]
