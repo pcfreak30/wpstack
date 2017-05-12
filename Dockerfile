@@ -1,8 +1,10 @@
-FROM wordpress
+FROM wordpress-php5.5
 
 RUN apt-get update && apt-get install -y git wget subversion cvs bzr
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -O /usr/local/bin/wp && chmod +x /usr/local/bin/wp
+
+RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 RUN pecl install xdebug
 
