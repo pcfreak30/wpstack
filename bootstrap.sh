@@ -3,7 +3,7 @@
 set -e
 
 # Call entrypoint.sh
-/entrypoint.sh "$@"
+docker-entrypoint.sh "$@"
 
 # If HOST_UID is passed, change the permissions
 if [ ! -z "$HOST_UID" ]; then
