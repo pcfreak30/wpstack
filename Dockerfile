@@ -24,7 +24,7 @@ COPY php/mailcatcher.ini /usr/local/etc/php/conf.d/mailcatcher.ini
 
 COPY bootstrap.sh /usr/local/bin/bootstrap.sh
 
-COPY droproot.sh /usr/local/bin/droproot.sh
+COPY droproot.sh /usr/local/bin/droproot
 
 RUN usermod -s /bin/bash www-data
 
