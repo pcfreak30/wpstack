@@ -15,4 +15,11 @@ if [ ! -z "$HOST_UID" ]; then
     chown -R www-data:www-data .
 fi
 
+if [  -z "$ENABLE_OPCACHE" ]; then
+    rm -f /usr/local/etc/php/conf.d/opcache.ini
+fi
+
+if [  -z "$ENABLE_XDEBUG" ]; then
+    rm -f /usr/local/etc/php/conf.d/xdebug.ini
+fi
 exec "$@"
