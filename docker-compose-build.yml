@@ -1,4 +1,4 @@
-wordpress:
+docker bui  wordpress:
   build: .
   environment:
     WORDPRESS_DB_PASSWORD: wpstack

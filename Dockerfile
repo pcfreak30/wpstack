@@ -1,4 +1,4 @@
-FROM pcfreak30/wordpress
+FROM wordpress:php7.0
 
 RUN apt-get update && apt-get install -y git wget subversion cvs bzr
 
