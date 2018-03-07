@@ -8,7 +8,7 @@ RUN wget https://phar.phpunit.de/phpunit-5.7.phar -O /usr/local/bin/phpunit && c
 
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-RUN pecl install xdebug
+RUN pecl install xdebug-2.5.5
 
 RUN sed -i "s/WP_DEBUG', false/WP_DEBUG', true/" /usr/src/wordpress/wp-config-sample.php
 
