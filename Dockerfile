@@ -14,6 +14,8 @@ RUN sed -i "s/WP_DEBUG', false/WP_DEBUG', true/" /usr/src/wordpress/wp-config-sa
 
 RUN docker-php-ext-install opcache
 
+RUN docker-php-ext-install soap
+
 COPY php/php.ini /usr/local/etc/php/php.ini
 
 COPY php/xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
