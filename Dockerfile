@@ -1,6 +1,6 @@
 FROM wordpress:php5.6
 
-RUN apt-get update && apt-get install -y git wget subversion cvs bzr
+RUN apt-get update && apt-get install -y git wget subversion cvs bzr mysql-client
 
 RUN wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar -O /usr/local/bin/wp && chmod +x /usr/local/bin/wp
 
